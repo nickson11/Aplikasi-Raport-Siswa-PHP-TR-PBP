@@ -1,0 +1,41 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateSiswaTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('siswa', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nis');
+            $table->string('nama_siswa');
+            $table->string('pass_siswa');
+            $table->string('agama');
+            $table->text('alamat');
+            $table->string('nilai_mtk');
+            $table->string('nilai_indo');
+            $table->string('nilai_inggris');
+            $table->string('nilai_agama');
+            $table->string('nilai_jurusan');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('siswa');
+    }
+}
